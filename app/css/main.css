@@ -838,12 +838,12 @@ section h3.section-subheading {
         padding: 0 20px 20px 100px;
     }
     .timeline>li .timeline-image {
-        width: 170px;
-        height: 170px;
-        margin-left: -85px;
+        width: 200px;
+        height: 200px;
+        margin-left: -100px;
     }
     .timeline>li .timeline-image h4 {
-        margin-top: 40px;
+        margin-top: 55px;
     }
     .timeline>li.timeline-inverted>.timeline-panel {
         padding: 0 100px 20px 20px;
