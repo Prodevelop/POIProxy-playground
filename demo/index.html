@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="vendor/leaflet/leaflet.css"></link>
+    <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.Default.css"></link>
+    <link rel="stylesheet" href="vendor/leaflet.markercluster/MarkerCluster.css"></link>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <select data-placeholder="Choose a news channel..." class="news-combo" style="width: 300px;position: absolute;top: 12px;left: 50px;height: 50px !important;font-size: 25px;background-color: white;" tabindex="1">
+        <option value="bbc">BBC</option>
+        <option value="cnn" selected="selected">CNN</option>
+        <option value="fox">Fox</option>
+        <option value="news">News</option>
+        <option value="reuters">Reuters</option>
+        <option value="sky">Sky</option>
+    </select>
+
+    <select data-placeholder="Choose a service..." class="service-combo" style="width: 300px;position: absolute;top: 72px;left: 50px;height: 50px !important;font-size: 25px;background-color: white;" tabindex="1">
+        <option value=""></option>
+        <option value="panoramio">Panoramio</option>
+        <option value="instagram">Instagram</option>
+        <option value="flickr">Flickr</option>
+    </select>
+
+    <script src="vendor/jquery.js"></script>
+    <script src="vendor/leaflet/leaflet.js"></script>
+    <script src="vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
