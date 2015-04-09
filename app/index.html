@@ -76,7 +76,7 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome To POIProxy!</div>
-                <div class="intro-heading">The POI APIs hub</div>
+                <div class="intro-heading">The points of interest hub</div>
                 <a href="#portfolio" class="page-scroll btn btn-xl">View demos</a>
             </div>
         </div>
@@ -128,49 +128,56 @@
                 </div>
             </div>
             <div class="row">
-                <div class="uc-container">
-                    <div class="col-md-4 col-sm-6 portfolio-item">
-                        <a id="poiproxy-news" href="#" class="poiproxy-news-fold portfolio-link" data-toggle="modal">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="img/portfolio/poiproxy-news.png" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>News of the world</h4>
-                            <p class="text-muted">A map with geolocated news</p>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-6 portfolio-item" style="display: none;">
-                        <div id="poiproxy-news-map">
-                        </div>
-                        <select data-placeholder="Choose a Country..." class="news-combo" style="width: 300px;position: absolute;top: 12px;left: 60px;height: 50px !important;font-size: 25px;background-color: white;" tabindex="1">
-                            <option value="bbc">BBC</option>
-                            <option value="cnn" selected="selected">CNN</option>
-                            <option value="fox">Fox</option>
-                            <option value="news">News</option>
-                            <option value="reuters">Reuters</option>
-                            <option value="sky">Sky</option>
-                        </select>
-                    </div>
-                </div><!-- / uc-container -->
-                <!-- <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="poiproxy-news" href="#" class="poiproxy-news-fold portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/poiproxy-news.png" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
+                        <h4>News of the world</h4>
+                        <p class="text-muted">A map with geolocated news</p>
                     </div>
                 </div>
+                <div class="col-md-8 col-sm-6 portfolio-item" style="display: none;">
+                    <div id="poiproxy-news-map" class="poiproxy-map">
+                    </div>
+                    <select data-placeholder="Choose a Country..." class="news-combo" style="width: 300px;position: absolute;top: 12px;left: 60px;height: 50px !important;font-size: 25px;background-color: white;" tabindex="1">
+                        <option value="bbc">BBC</option>
+                        <option value="cnn" selected="selected">CNN</option>
+                        <option value="fox">Fox</option>
+                        <option value="news">News</option>
+                        <option value="reuters">Reuters</option>
+                        <option value="sky">Sky</option>
+                    </select>
+                </div>
                 <div class="col-md-4 col-sm-6 portfolio-item">
+                    <a id="poiproxy-photos" href="#" class="poiproxy-photos-fold portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/poiproxy-photos.png" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Photos of the world</h4>
+                        <p class="text-muted">A map with geolocated photos</p>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-6 portfolio-item" style="display: none;">
+                    <div id="poiproxy-photos-map" class="poiproxy-map">
+                    </div>
+                    <select data-placeholder="Choose a service..." class="photos-combo" style="width: 300px;position: absolute;top: 12px;left: 60px;height: 50px !important;font-size: 25px;background-color: white;" tabindex="1">
+                        <option value="panoramio" selected="selected">Panoramio</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="flickr">Flickr</option>
+                    </select>
+                </div>
+                <!--div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -485,6 +492,7 @@
     <script src="js/vendor/leaflet/leaflet.js"></script>
     <script src="js/vendor/leaflet.markercluster/leaflet.markercluster.js"></script>
     <script src="demos/poiproxy-news/poiproxy-news.js"></script>
+    <script src="demos/poiproxy-photos/poiproxy-photos.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

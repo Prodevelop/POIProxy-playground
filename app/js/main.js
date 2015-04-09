@@ -1,14 +1,23 @@
 var demoTemplate = '<div class="container"><div class="row demo-template"></div></div>';
 $('#poiproxy-news').click(function() {
-    var show = $('#poiproxy-news').attr('show-map');
+    loadMap('#poiproxy-news', 'poiproxy-news-map', loadNewsPlugin);
+});
+
+$('#poiproxy-photos').click(function() {
+    loadMap('#poiproxy-photos', 'poiproxy-photos-map', loadPhotos);
+});
+
+var loadMap = function(link, map, fn) {
+    var show = $(link).attr('show-map');
     if (show == "true") {
-        $('#poiproxy-news-map').parent().hide();
-        $('#poiproxy-news').attr('show-map', false);
+        $('#' + map).parent().hide();
+        $(link).attr('show-map', false);
     } else {
-        $('#poiproxy-news-map').parent().show();
-        $('#poiproxy-news').attr('show-map', true);
+        $('.poiproxy-map').parent().hide();
+        $('#' + map).parent().show();
+        $(link).attr('show-map', true);
         if (show === undefined) {
-            loadNewsPlugin('poiproxy-news-map');
+            fn(map);
         }
     }
-});
+};

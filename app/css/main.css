@@ -1089,6 +1089,6 @@ body {
     webkit-tap-highlight-color: #fed136;
 }
 
-#poiproxy-news-map {
+.poiproxy-map {
     height: 400px;
 }
