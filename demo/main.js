@@ -63,37 +63,36 @@ $(document).ready(function() {
                     }
                 });
             }
+        };
+        var loadService = function(service) {
+            markers.clearLayers();
+            var center = map.getCenter();
+            var lon = center.lng;
+            var lat = center.lat;
+            if (service) {
+                $.ajax({
+                    'url': url + '/browseByLonLat?&service=' + service + "&lon=" + lon + '&lat=' + lat + '&dist=1000',
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    error: function() {},
+                    success: function(response) {
+                        var geoJsonLayer = L.geoJson(response.features, {
+                            onEachFeature: function(feature, layer) {
+                                var popupContent = '';
+                                if (feature.properties) {
+                                    popupContent += "<strong>" + feature.properties.name + "</strong>";
+                                    popupContent += "</br>";
+
+                                    popupContent += "<a href='" + feature.properties.image + "' target='_blank'><img width=200 src='" + feature.properties.image + "'/></a>";
+                                    layer.bindPopup(popupContent);
+                                }
+                            }
+                        });
+                        markers.addLayer(geoJsonLayer);
+                    }
+                });
+            }
         }
         loadNews('cnn');
     };
-
-    var loadService = function(service) {
-        markers.clearLayers();
-        var center = map.getCenter();
-        var lon = center.lng;
-        var lat = center.lat;
-        if (service) {
-            $.ajax({
-                'url': url + '/browseByLonLat?&service=' + service + "&lon=" + lon + '&lat=' + lat + '&dist=1000',
-                jsonp: "callback",
-                dataType: "jsonp",
-                error: function() {},
-                success: function(response) {
-                    var geoJsonLayer = L.geoJson(response.features, {
-                        onEachFeature: function(feature, layer) {
-                            var popupContent = '';
-                            if (feature.properties) {
-                                popupContent += "<strong>" + feature.properties.name + "</strong>";
-                                popupContent += "</br>";
-
-                                popupContent += "<a href='" + feature.properties.image + "' target='_blank'><img width=200 src='" + feature.properties.image + "'/></a>";
-                                layer.bindPopup(popupContent);
-                            }
-                        }
-                    });
-                    markers.addLayer(geoJsonLayer);
-                }
-            });
-        }
-    }
 });
