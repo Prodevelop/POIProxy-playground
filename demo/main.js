@@ -42,7 +42,13 @@ $(document).ready(function() {
                     dataType: "jsonp",
                     error: function() {},
                     success: function(response) {
-                        var geoJsonLayer = L.geoJson(response.features, {
+                        var features = [];
+                      	for (var i = 0, l = response.features.length; i<l; i++) {
+                            if (response.features[i].geometry.coordinates[0] != 0) {
+                                features.push(response.features[i]);
+                            }
+                        }
+                        var geoJsonLayer = L.geoJson(features, {
                             onEachFeature: function(feature, layer) {
                                 if (feature.properties) {
                                     var popupContent = feature.properties.published;
